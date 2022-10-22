@@ -1,0 +1,12 @@
+---
+- name: "Playing with Ansible"
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: "Just execute a ls -lrt command"
+    shell: "ls -lrt"
+    register: "output"
+  
+  - name: "Output the message"
+    debug:
+      var: output.stdout_lines
